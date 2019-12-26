@@ -1,8 +1,9 @@
 ﻿using System;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.HttpOverrides;
+using ProxyKit.HttpOverrides;
 
-namespace ProxyKit.HttpOverrides
+// ReSharper disable once CheckNamespace
+namespace Microsoft.AspNetCore.Builder
 {
     public class ForwardedHeadersWithPathBaseOptions : ForwardedHeadersOptions
     {
