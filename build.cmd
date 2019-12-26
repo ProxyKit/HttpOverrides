@@ -12,7 +12,7 @@ if errorlevel 1 (
 docker run --rm -it --name proxykit-httpoverrides-build ^
   -v %cd%:/repo ^
   -w /repo ^
-  -e FEEDZ_API_KEY=$FEEDZ_API_KEY ^
+  -e FEEDZ_PROXYKIT_API_KEY=$FEEDZ_PROXYKIT_API_KEY ^
   proxykit-httpoverrides-build ^
   dotnet run -p build/build.csproj -c Release -- %*
 
