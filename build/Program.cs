@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using static Bullseye.Targets;
 using static SimpleExec.Command;
 
@@ -8,6 +9,7 @@ namespace build
     class Program
     {
         private const string ArtifactsDir = "artifacts";
+        private const string Clean = "clean";
         private const string Build = "build";
         private const string Test = "test";
         private const string Pack = "pack";
@@ -15,6 +17,29 @@ namespace build
 
         static void Main(string[] args)
         {
+            Target(Clean, () =>
+            {
+                if (!Directory.Exists(ArtifactsDir))
+                {
+                    return;
+                }
+                var filesToDelete = Directory
+                    .GetFiles(ArtifactsDir, "*.*", SearchOption.AllDirectories)
+                    .Where(f => !f.EndsWith(".gitignore"));
+                foreach (var file in filesToDelete)
+                {
+                    Console.WriteLine($"Deleting file {file}");
+                    File.SetAttributes(file, FileAttributes.Normal);
+                    File.Delete(file);
+                }
+                var directoriesToDelete = Directory.GetDirectories("artifacts");
+                foreach (var directory in directoriesToDelete)
+                {
+                    Console.WriteLine($"Deleting directory {directory}");
+                    Directory.Delete(directory, true);
+                }
+            });
+
             Target(Build, () => Run("dotnet", "build HttpOverrides.sln -c Release"));
 
             Target(
