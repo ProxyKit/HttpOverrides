@@ -19,25 +19,11 @@ namespace build
         {
             Target(Clean, () =>
             {
-                if (!Directory.Exists(ArtifactsDir))
+                if (Directory.Exists(ArtifactsDir))
                 {
-                    return;
+                    Directory.Delete(ArtifactsDir, true);
                 }
-                var filesToDelete = Directory
-                    .GetFiles(ArtifactsDir, "*.*", SearchOption.AllDirectories)
-                    .Where(f => !f.EndsWith(".gitignore"));
-                foreach (var file in filesToDelete)
-                {
-                    Console.WriteLine($"Deleting file {file}");
-                    File.SetAttributes(file, FileAttributes.Normal);
-                    File.Delete(file);
-                }
-                var directoriesToDelete = Directory.GetDirectories("artifacts");
-                foreach (var directory in directoriesToDelete)
-                {
-                    Console.WriteLine($"Deleting directory {directory}");
-                    Directory.Delete(directory, true);
-                }
+                Directory.CreateDirectory(ArtifactsDir);
             });
 
             Target(Build, () => Run("dotnet", "build HttpOverrides.sln -c Release"));
