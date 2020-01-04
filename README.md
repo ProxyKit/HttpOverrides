@@ -1,6 +1,8 @@
 # ProxyKit HttpOverrides
 
-[![NuGet][nuget badge]][nuget package] [![feedz.io](https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2Ff.feedz.io%2Fdh%2Foss-ci%2Fshield%2FProxyKit.HttpOverrides%2Flatest)](https://f.feedz.io/dh/oss-ci/packages/ProxyKit.HttpOverrides/latest/download)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fproxykit%2FHttpOverrides%2Fbadge&style=flat&label=build)](https://actions-badge.atrox.dev/proxykit/HttpOverrides/goto)
+[![NuGet][nuget badge]][nuget package]
+[![feedz.io](https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2Ff.feedz.io%2Fdh%2Foss-ci%2Fshield%2FProxyKit.HttpOverrides%2Flatest)](https://f.feedz.io/dh/oss-ci/packages/ProxyKit.HttpOverrides/latest/download)
 
 ## Introduction
 Applications that are deployed behind a reverse proxy typically need to be
