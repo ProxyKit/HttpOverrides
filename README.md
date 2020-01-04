@@ -66,8 +66,43 @@ additional properties that follows the same patterns of the base class:
 Please refer to the [`ForwaredHeadersMiddleware` documentation][forwarded headers middleware]
 for correct usage of other properties (and note the security advisory!).
 
----
-Questions to [@randompunter][twitter].
+## How to build
+
+The build requires Docker to ensure portability with CI.
+
+On Windows:
+
+```bash
+.\build.cmd
+```
+
+On Linux:
+
+```bash
+./build.sh
+```
+
+To build without docker, .NET Core SDK 3.1 is required.
+
+On Windows:
+
+```bash
+.\build-local.cmd
+```
+
+On Linux:
+
+```bash
+./build-local.sh
+```
+
+## Contributing / Feedback / Questions
+
+Any ideas for features, bugs or questions, please create an issue. Pull requests
+gratefully accepted but please create an issue for discussion first.
+
+I can be reached on twitter at [@randompunter](https://twitter.com/randompunter)
+
 
 [nuget badge]: https://img.shields.io/nuget/v/ProxyKit.HttpOverrides.svg
 [nuget package]: https://www.nuget.org/packages/ProxyKit.HttpOverrides
