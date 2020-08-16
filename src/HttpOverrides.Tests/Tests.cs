@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.TestHost;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using ProxyKit.HttpOverrides;
 using Shouldly;
 using Xunit;
 
-namespace ProxyKit.XForwardedExtensions
+namespace ProxyKit.HttpOverrides
 {
     public class Tests
     {
@@ -23,7 +16,7 @@ namespace ProxyKit.XForwardedExtensions
             var builder = new WebHostBuilder()
                 .Configure(app =>
                 {
-                    var options = new ForwardedHeadersWithPathBaseOptions()
+                    var options = new ForwardedHeadersWithPathBaseOptions
                     {
                         ForwardedHeaders = ForwardedHeadersWithPathBase.All
                     };

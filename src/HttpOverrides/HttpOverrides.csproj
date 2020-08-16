@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netcoreapp3.1</TargetFrameworks>
     <Description>An extension to AspNetCore HttpOverrides middleware that adds support for X-Forwared-PathBase.</Description>
     <PackageId>ProxyKit.HttpOverrides</PackageId>
     <Authors>Damian Hickey</Authors>
@@ -30,14 +30,20 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
-    <PackageReference Include="MinVer" Version="2.0.0">
+    <PackageReference Include="MinVer" Version="2.3.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' != 'netcoreapp3.1'">
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.1.0"/>
+    <PackageReference Include="Microsoft.AspNetCore.HttpOverrides" Version="2.1.0"/>
+    <PackageReference Include="Microsoft.Extensions.Options" Version="2.1.0"/>
   </ItemGroup>
 
   <ItemGroup>

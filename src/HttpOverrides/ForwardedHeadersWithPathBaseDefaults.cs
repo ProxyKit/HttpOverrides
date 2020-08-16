@@ -1,4 +1,6 @@
-﻿namespace ProxyKit.HttpOverrides
+﻿using Microsoft.AspNetCore.Builder;
+
+namespace ProxyKit.HttpOverrides
 {
     /// <summary>
     /// Default values related to <see cref="ForwardedHeadersWithPathBaseMiddleware"/> middleware

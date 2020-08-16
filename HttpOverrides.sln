@@ -7,6 +7,37 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpOverrides", "src\HttpOv
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpOverrides.Tests", "src\HttpOverrides.Tests\HttpOverrides.Tests.csproj", "{30E39E25-9D93-46D7-913E-5F90F0150718}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "build", "build\build.csproj", "{99B7112D-F623-4A7F-8876-350141B44BA7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{11416B02-3A5E-4B1A-89E0-A1F6D5855DD5}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		build-local.cmd = build-local.cmd
+		build-local.sh = build-local.sh
+		build.cmd = build.cmd
+		build.sh = build.sh
+		LICENSE = LICENSE
+		logo.png = logo.png
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{563F0296-AB75-4FAA-A9E3-482B4D084F52}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{B695E126-B741-44B4-B20B-5B1A0E9E8E5C}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\ci.yml = .github\workflows\ci.yml
+		.github\workflows\pr.yml = .github\workflows\pr.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ISSUE_TEMPLATE", "ISSUE_TEMPLATE", "{3FC35415-D736-496D-A6B4-31A18BD04898}"
+	ProjectSection(SolutionItems) = preProject
+		.github\ISSUE_TEMPLATE\bug_report.md = .github\ISSUE_TEMPLATE\bug_report.md
+		.github\ISSUE_TEMPLATE\feature_request.md = .github\ISSUE_TEMPLATE\feature_request.md
+		.github\ISSUE_TEMPLATE\other.md = .github\ISSUE_TEMPLATE\other.md
+		.github\ISSUE_TEMPLATE\question.md = .github\ISSUE_TEMPLATE\question.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +52,17 @@ Global
 		{30E39E25-9D93-46D7-913E-5F90F0150718}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30E39E25-9D93-46D7-913E-5F90F0150718}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30E39E25-9D93-46D7-913E-5F90F0150718}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99B7112D-F623-4A7F-8876-350141B44BA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99B7112D-F623-4A7F-8876-350141B44BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99B7112D-F623-4A7F-8876-350141B44BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99B7112D-F623-4A7F-8876-350141B44BA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B695E126-B741-44B4-B20B-5B1A0E9E8E5C} = {563F0296-AB75-4FAA-A9E3-482B4D084F52}
+		{3FC35415-D736-496D-A6B4-31A18BD04898} = {563F0296-AB75-4FAA-A9E3-482B4D084F52}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {61D66EC0-2E2A-4AE6-A06E-F8D572DFB319}
