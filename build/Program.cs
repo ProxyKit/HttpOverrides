@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using static Bullseye.Targets;
 using static SimpleExec.Command;
 
@@ -26,7 +25,7 @@ namespace build
                 Directory.CreateDirectory(ArtifactsDir);
             });
 
-            Target(Build, () => Run("dotnet", "build HttpOverrides.sln -c Release"));
+            Target(Build, () => Run("dotnet", "build HttpOverrides.sln -c Release -p:ContinuousIntegrationBuild=true"));
 
             Target(
                 Test,
