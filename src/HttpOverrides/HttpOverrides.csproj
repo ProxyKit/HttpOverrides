@@ -2,13 +2,16 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netcoreapp3.1</TargetFrameworks>
-    <Description>An extension to AspNetCore HttpOverrides middleware that adds support for X-Forwared-PathBase.</Description>
+    <AssemblyName>ProxyKit.HttpOverrides</AssemblyName>
+    <RootNamespace>ProxyKit.HttpOverrides</RootNamespace>
     <PackageId>ProxyKit.HttpOverrides</PackageId>
+    <Description>An extension to AspNetCore HttpOverrides middleware that adds support for X-Forwared-PathBase.</Description>
     <Authors>Damian Hickey</Authors>
     <PackageProjectUrl>https://github.com/proxykit/HttpOverrides</PackageProjectUrl>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <PublishRepositoryUrl>https://github.com/ProxyKit/HttpOverrides</PublishRepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <MinVerTagPrefix>v</MinVerTagPrefix>
     <MinVerMinimumMajorMinor>1.0</MinVerMinimumMajorMinor>
@@ -21,8 +24,9 @@
     <PackageIcon>icon.png</PackageIcon>
     <PackageReleaseNotes>See https://github.com/proxyKit/HttpOverrides/releases for release notes.</PackageReleaseNotes>
     <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
-    <AssemblyName>ProxyKit.HttpOverrides</AssemblyName>
-    <RootNamespace>ProxyKit.HttpOverrides</RootNamespace>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <!-- Workaround for https://github.com/dotnet/sourcelink/issues/91 -->
+    <DeterministicSourcePaths Condition="'$(EnableSourceLink)' == ''">false</DeterministicSourcePaths>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="ConfigureAwaitChecker.Analyzer" Version="4.0.0">
