@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.AspNetCore.HttpOverrides;
+﻿using Microsoft.AspNetCore.HttpOverrides;
 using ProxyKit.HttpOverrides;
 
 // ReSharper disable once CheckNamespace
