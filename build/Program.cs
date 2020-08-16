@@ -48,7 +48,7 @@ namespace build
                     Console.WriteLine($"Feedz API Key available ({apiKey.Substring(0,5)}). Pushing packages to Feedz...");
                     foreach (var packageToPush in packagesToPush)
                     {
-                        Run("dotnet", $"nuget push {packageToPush} -s https://f.feedz.io/dh/oss-ci/nuget/index.json -k {apiKey} -SkipDuplicate", noEcho: true);
+                        Run("dotnet", $"nuget push {packageToPush} -s https://f.feedz.io/dh/oss-ci/nuget/index.json --api-key {apiKey} --skip-duplicate", noEcho: true);
                     }
                 }
             });
